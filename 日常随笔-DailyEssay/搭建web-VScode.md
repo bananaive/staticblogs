@@ -1,4 +1,4 @@
-参考内容
+主要参考内容
 
 [一个视频][0]
 
@@ -9,7 +9,7 @@
 
 多版本下载地址[官网][2](已经在2017年停止更新,最新版本0.29.2)
 
-安装流程,参考博文[pkg-config安装][3]
+安装流程,参考[博文][3]
 ```shell
 wget https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz
 tar -zxvf ***.tar.gz
@@ -48,7 +48,7 @@ sudo apt install yarn
 ```
 ## nodejs
 nodejs的版本需要大于14小于16(因为我装了12的,报错信息是这么讲的)
-[多版本地址][5]
+[多个版本地址][5]
 ```shell
 wget https://nodejs.org/dist/v15.0.0/node-v15.0.0.tar.gz
 解压
@@ -58,6 +58,7 @@ cd 解压后的文件夹
 ./configure
 make&&make install
 ```
+# 编译并运行VScode-web
 
 ## 安装VScode
 ```shell
@@ -76,20 +77,23 @@ yarn
 默认界面端口为8080
 默认服务端口为8081
 
-## 出现的问题
+# 出现的问题
+在vscode第一次``yarn``时
 ```shell
 Package xcb was not found in the pkg-config search path.
 Perhaps you should add the directory containing `xcb.pc'
 to the PKG_CONFIG_PATH environment variable
 Package 'xcb', required by 'x11', not found
 ```
-参考博客[问题解决][4]
+参考[博客][4]
 
 意思就是``xcb.pc``这个包找不到,那就把这个包定位出来,然后从源目录拷贝进``/usr/lib/pkgconfig/``目录下就好
 
 我这里发现,好多缺失的包都在一个目录下,且目标``/usr/lib/pkgconfig/``目录下为空,故整体cp到目标目录,然后再yarn,就没有报错了
 
 哦对,如果yarn的过程中,因为超时卡住,不要慌,再yarn一次
+
+最后的 yarn watch似乎需要**很多**的内存...我服务器是4G的,构建了几次都不太行
 
 ## 如何使用
 

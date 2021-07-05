@@ -67,6 +67,8 @@ git clone https://www.github.com/ymj68520/vxcode.git
 cd vscode
 git checkout main
 git pull https://github.com/microsoft/vscode.git main
+上面的步骤可以直接去掉,原因在"出现问题"部分有
+直接git clone https://github.com/microsoft/vscode.git
 yarn
 ```
 ## 运行vscode-web
